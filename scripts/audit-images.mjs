@@ -1,5 +1,5 @@
-const fs = require('node:fs');
-const sharp = require('sharp');
+import fs from 'node:fs';
+import sharp from 'sharp';
 
 (async () => {
   const files = fs.readdirSync('public/images');

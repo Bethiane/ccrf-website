@@ -12,7 +12,7 @@ export default function InitiativesPage() {
         <p className="eyebrow">Initiatives</p>
         <h1>Every campaign has a beneficiary, a reason, and a next step.</h1>
         <p>
-          Look back at CCRF's past initiatives in scholarships, healthcare, education, remembrance,
+          Look back at CCRF&apos;s past initiatives in scholarships, healthcare, education, remembrance,
           and livelihoods.
         </p>
       </section>
