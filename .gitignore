@@ -2,7 +2,6 @@
 node_modules
 out
 dist
-.env*
 !.env.example
 npm-debug.log*
 yarn-debug.log*
@@ -12,3 +11,4 @@ output/
 *.tsbuildinfo
 .agents/
 .codex/
+config.bat
