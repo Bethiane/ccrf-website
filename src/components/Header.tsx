@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const navItems = [
@@ -14,13 +14,23 @@ const navItems = [
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const menuButton = useRef<HTMLButtonElement>(null);
 
   return (
-    <header className={`site-header ${pathname === "/" ? "home-header" : ""} ${isMenuOpen ? "menu-open" : ""}`}>
-      <Link className="brand" href="/" aria-label="Comfort Corner Rwanda Foundation home">
+    <header
+      className={`site-header ${pathname === "/" ? "home-header" : ""} ${isMenuOpen ? "menu-open" : ""}`}
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && isMenuOpen) {
+          setIsMenuOpen(false);
+          menuButton.current?.focus();
+        }
+      }}
+    >
+      <Link className="brand" href="/" aria-label="Comfort Corner Rwanda Foundation home" onClick={() => setIsMenuOpen(false)}>
         <Image className="brand-logo" src="/images/logo.png" alt="Comfort Corner Rwanda Foundation" width={144} height={46} priority />
       </Link>
       <button
+        ref={menuButton}
         className="menu-toggle"
         type="button"
         aria-label="Toggle navigation menu"

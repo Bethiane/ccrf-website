@@ -17,7 +17,7 @@ export default function Home() {
               fill
               priority
               quality={95}
-              sizes="(max-width: 640px) 160vw, 100vw"
+              sizes="(max-width: 800px) max(100vw, 140svh), 100vw"
             />
           </div>
         <div className="hero-bottom">
